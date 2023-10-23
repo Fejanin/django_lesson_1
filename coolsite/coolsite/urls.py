@@ -21,5 +21,11 @@ from robots.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('robots/', include('robots.urls'))
+    path('', include('robots.urls'))
 ]
+
+# хэндлеры работают только когда DEBUG = False
+handler404 = pageNotFound # строку не менять!!!
+# handler500 - ошибка сервера
+# handler403 - доступ запрещен
+# handler400 - невозможно обработать запрос
